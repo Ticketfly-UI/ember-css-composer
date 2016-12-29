@@ -14,5 +14,8 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  // Import the template compiler for testing the AST transforms
+  app.import('bower_components/ember/ember-template-compiler.js');
+
   return app.toTree();
 };

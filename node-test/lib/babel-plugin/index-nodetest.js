@@ -1,8 +1,5 @@
-const { transform, getExpectedResult } = require('../../helpers/transform-file');
-const babel = require('babel-core');
+const { transform, getExpectedResult } = require('../../helpers/transform-babel-file');
 const should = require('should');
-const plugin = require('../../../lib/babel-plugin/index');
-const filesPath = 'node-test/fixtures/babel-plugin';
 
 describe('babel plugin', function() {
   describe('`classNames` transform', function() {

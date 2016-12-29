@@ -7,9 +7,19 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Test",
+      "name": "Node Test",
       "program": "${workspaceRoot}/node-test/runner.js",
       "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Ember Test",
+      "program": "${workspaceRoot}/node_modules/ember-cli/lib/cli/index.js",
+      "cwd": "${workspaceRoot}",
+      "args": [
+        "-s"
+      ],
     },
     {
       "type": "node",
