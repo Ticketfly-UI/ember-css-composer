@@ -1,5 +1,3 @@
-'use strict';
-
 import _classifyMacro from 'ember-css-composer/classify-macro';
 import _classify from 'ember-css-composer/classify';
 import Component from 'ember-component';

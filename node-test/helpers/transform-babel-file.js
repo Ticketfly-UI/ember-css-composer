@@ -8,7 +8,8 @@ module.exports = {
     let file = `${filesPath}/${path}/input.js`;
 
     let result = babel.transformFileSync(file, {
-      blacklist: ['es6.modules'],
+      // only transform with the plugin.
+      whitelist: [],
       plugins: [
         plugin(babel)
       ]
