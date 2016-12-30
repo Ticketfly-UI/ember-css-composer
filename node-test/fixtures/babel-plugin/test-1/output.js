@@ -1,3 +1,5 @@
+'use strict';
+
 import _classify from 'ember-css-composer/classify';
 import Component from 'ember-component';
 

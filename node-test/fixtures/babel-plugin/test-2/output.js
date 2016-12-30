@@ -1,6 +1,8 @@
+'use strict';
+
 import _classify2 from 'ember-css-composer/classify';
 import Component from 'ember-component';
-let _classify = true;
+var _classify = true;
 
 export default Component.extend({
   otherProp: true,

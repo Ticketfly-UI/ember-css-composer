@@ -4,7 +4,7 @@ This addon provides a few simple tools to move the CSS-dependent configuration o
 Javascript/Handlebars and moves it into a CSS-like configuration file. There are two things this
 might be good for:
 
-1. If you a developer of an addon that exposes components and you want the consumers of your addon to 
+1. If you are developer of an addon that exposes components and you want the consumers of your addon to 
 easily override the different class names for the various states of your components (rather than exposing
 configuration options on the component itself)
 
@@ -38,36 +38,37 @@ export default Component.extend({
 ```
 
 ```css
-/* addon/styles/config.css-config */
-.a-list-component {
-  composes: 'my-list', 'background-g3', 'font-size-big';
-}
+/* app/styles/app.css-compose */
+@composer {
+  @a-list-component {
+    composes: 'my-list', 'background-g3', 'font-size-big';
+  }
 
-.a-list-is-open {
-  composes: 'my-list__open', 'background-g6';
-}
+  @a-list-is-open {
+    composes: 'my-list__open', 'background-g6';
+  }
 
-.a-list-is-closed {
-  composes: 'my-list__closed';
-}
+  @a-list-is-closed {
+    composes: 'my-list__closed';
+  }
 
-.a-list-item {
-  composes: 'my-list-item', 'color-g4-hover';
+  @a-list-item {
+    composes: 'my-list-item', 'color-g4-hover';
+  }
 }
 ```
 
-Given all of these settings, this will transpile those files into this:
+Given all of these settings, this will transpile those files into something like this:
 
 ```js
 // addon/components/a-list.js
 import Component from 'ember-component';
-import { classNamesMacro } from 'ember-css-composer';
-const isOpenSymbol = Symbol();
+import _classifyMacro from 'ember-css-composer/classify-macro';
 
 export default Component.extend({
   classNames: ['my-list', 'background-g3', 'font-size-big'],
-  classNameBindings: [`${isOpenSymbol}`],
-  [isOpenSymbol]: classNamesMacro('isOpen', ['my-list__open', 'background-g6'], ['my-list__closed']),
+  classNameBindings: ['_isOpen'],
+  _isOpen: _classNameMacro('isOpen', ['my-list__open', 'background-g6'], ['my-list__closed']),
   isOpen: false
 });
 ```
@@ -111,3 +112,5 @@ export default Component.extend({
 * `ember build`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+![Amadeus](http://24.media.tumblr.com/tumblr_mcbz1pZFKN1qllovxo1_500.gif)

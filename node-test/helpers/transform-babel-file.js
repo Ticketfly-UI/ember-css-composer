@@ -8,8 +8,9 @@ module.exports = {
     let file = `${filesPath}/${path}/input.js`;
 
     let result = babel.transformFileSync(file, {
+      blacklist: ['es6.modules'],
       plugins: [
-        [plugin({ types: babel.types })]
+        plugin(babel)
       ]
     });
 

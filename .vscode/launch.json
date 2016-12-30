@@ -15,10 +15,10 @@
       "type": "node",
       "request": "launch",
       "name": "Ember Test",
-      "program": "${workspaceRoot}/node_modules/ember-cli/lib/cli/index.js",
+      "program": "/Users/spencer.price/.nvm/versions/node/v6.6.0/bin/ember",
       "cwd": "${workspaceRoot}",
       "args": [
-        "-s"
+        "serve"
       ],
     },
     {
