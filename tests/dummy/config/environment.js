@@ -17,6 +17,12 @@ module.exports = function(environment) {
       }
     },
 
+    browserify: {
+      transform: [
+        ['babelify', { presets: ['es2015'] }]
+      ]
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

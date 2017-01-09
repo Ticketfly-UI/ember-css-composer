@@ -14,12 +14,23 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Ember Test",
+      "name": "Ember Serve",
       "program": "/Users/spencer.price/.nvm/versions/node/v6.6.0/bin/ember",
       "cwd": "${workspaceRoot}",
       "args": [
         "serve"
       ],
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Ember Test",
+      "program": "/Users/spencer.price/.nvm/versions/node/v6.6.0/bin/ember",
+      "cwd": "${workspaceRoot}",
+      "args": [
+        "test",
+        "-s"
+      ]
     },
     {
       "type": "node",
