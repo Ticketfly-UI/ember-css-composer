@@ -1,0 +1,5 @@
+@composer {
+  @test-1 {
+    composes: 'class-a', 'class-b', 'class-c';
+  }
+}

@@ -1,0 +1,1 @@
+export default {"test-2":["class-d","class-e"],"test-1":["class-a","class-b","class-c"]};
