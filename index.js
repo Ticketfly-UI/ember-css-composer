@@ -1,6 +1,7 @@
 /* jshint node: true */
 'use strict';
 
+const LOOKUP_OUTPUT = 'css-classes-json.js';
 const CSStoJSON = require('./lib/css-plugin/index');
 const BabelPlugin = require('./lib/babel-plugin/index');
 const BabelTranspiler = require('broccoli-babel-transpiler');
@@ -43,7 +44,7 @@ module.exports = {
     });
 
     let configFileTree = CSStoJSON(cssComposeTree, { 
-      outputFile: 'modules/ember-css-composer/css-classes-json.js' 
+      outputFile: `modules/ember-css-composer/${LOOKUP_OUTPUT}`
     });
 
     return new MergeTrees([addonTree, configFileTree]);

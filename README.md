@@ -82,15 +82,42 @@ export default Component.extend({
 {{/each}}
 ```
 
-## The Pieces
+### Dynamically Generated Class Names
 
-1. A Broccoli Plugin for finding the config files and processing in order from addon up to app. 
-  - Should create an in memory file for converting a class name into a list of class names
-2. The `classNamesMacro` for converting `classNameBindings` that have truthy/falsey values.
-3. Babel Plugin to transpile component files looking for string definitions beginning with `@`
-  - Imports file from step 1
-4. HTMLBars Plugin to transpile template files looking for `class="@"`
-  - Imports file from step 2
+In the event that you need to dynamically generate class names, you can directly import the `classify`
+utility to convert a key into a list of class names. For example:
+
+```css
+/* app/styles/app.css-compose */
+@composer {
+  @myComponent-red {
+    composes: 'red';
+  }
+
+  @myComponent-blue {
+    composes: 'blue';
+  }
+
+}
+```
+
+```js
+import Component from 'ember-component';
+import computed from 'ember-computed';
+import get from 'ember-metal/get';
+import { classify } from 'ember-css-composer';
+
+export default Component.extend({
+  classNameBindings: ['colorClass'],
+  color: 'red',
+
+  colorClass: computed('color', {
+    get() {
+      return classify(`myComponent-${get(this, 'color')}`);
+    }
+  })
+});
+```
 
 ## Installation
 
