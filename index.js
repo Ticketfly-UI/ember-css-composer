@@ -3,6 +3,7 @@
 
 const LOOKUP_OUTPUT = 'css-classes-json.js';
 const CSStoJSON = require('./lib/css-plugin/index');
+const CleanCSSCompose = require('./lib/css-plugin/clean-composer');
 const BabelPlugin = require('./lib/babel-plugin/index');
 const BabelTranspiler = require('broccoli-babel-transpiler');
 const MergeTrees = require('broccoli-merge-trees');
@@ -16,6 +17,14 @@ module.exports = {
     if (type !== 'parent') { 
       return; 
     }
+
+    registry.add('css', {
+      name: 'ember-css-composer-clean-css',
+      toTree: function(inputTree) {
+        return new CleanCSSCompose(inputTree);
+      }
+    });
+
 
     registry.add('js', {
       name: 'ember-css-composer-babel',
@@ -40,7 +49,7 @@ module.exports = {
     var addonTree = this._super.treeForAddon.call(this, tree);
 
     let cssComposeTree = new Funnel(this.app.trees.app, {
-      include: ['**/*.css-compose']
+      include: ['**/*.css']
     });
 
     let configFileTree = CSStoJSON(cssComposeTree, { 

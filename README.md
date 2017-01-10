@@ -38,7 +38,7 @@ export default Component.extend({
 ```
 
 ```css
-/* app/styles/app.css-compose */
+/* app/styles/app.css */
 @composer {
   @a-list-component {
     composes: 'my-list', 'background-g3', 'font-size-big';
@@ -88,7 +88,7 @@ In the event that you need to dynamically generate class names, you can directly
 utility to convert a key into a list of class names. For example:
 
 ```css
-/* app/styles/app.css-compose */
+/* app/styles/app.css */
 @composer {
   @myComponent-red {
     composes: 'red';

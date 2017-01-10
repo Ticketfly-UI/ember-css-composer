@@ -1,0 +1,13 @@
+.class-e {
+  font-size: 12px;
+}
+
+@composer {
+  @test-2 {
+    composes: 'class-d','class-e';
+  }
+}
+
+.other-styles {
+  color: blue;
+}
