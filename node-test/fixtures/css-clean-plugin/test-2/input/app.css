@@ -2,8 +2,12 @@
   @test-1 {
     composes: 'class-a', 'class-b', 'class-c';
   }
+}
 
-  @test-2 {
-    composes: 'class-d','class-e';
-  }
+.class-a {
+  background: red;
+}
+
+.class-b {
+  background: green;
 }

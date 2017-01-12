@@ -1,0 +1,10 @@
+/**
+  This is a placeholder file. At build time, the application will generate a 
+  real file that exports a POJO that maps from lookup names to output names. 
+
+  Something like:
+ */
+
+export default {
+  'component-a': ['class-1', 'class-2', 'class-3']
+};
