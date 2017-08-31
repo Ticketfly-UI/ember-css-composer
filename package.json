@@ -22,7 +22,7 @@
     "broccoli": "^1.1.0",
     "broccoli-babel-transpiler": "^5.6.1",
     "broccoli-concat": "^3.0.5",
-    "broccoli-funnel": "^1.1.0",
+    "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-persistent-filter": "^1.2.12",
     "ember-cli-babel": "^5.1.7",
