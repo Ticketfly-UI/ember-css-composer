@@ -19,7 +19,7 @@
     "node-test": "node node-test/runner.js"
   },
   "dependencies": {
-    "broccoli": "^1.1.0",
+    "broccoli": "^3.3.3",
     "broccoli-babel-transpiler": "^5.6.1",
     "broccoli-concat": "^3.0.5",
     "broccoli-funnel": "^1.1.0",
